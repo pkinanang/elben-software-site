@@ -5,6 +5,7 @@ import 'web_services_page.dart';
 import 'ui_ux_design_page.dart';
 import 'contact_page.dart';
 import 'quote_request_page.dart';
+import 'footer.dart';
 
 void main() {
   runApp(const ElbenSoftwareApp());
@@ -35,7 +36,13 @@ class HomePage extends StatelessWidget {
     // LayoutBuilder helps us make decisions based on screen width
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Elben Software', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Image.asset(
+            'assets/images/logo.png', // Make sure you have your logo here
+            height: 78, // Adjust the height for your logo
+          ),
+        ),
         actions: [
           MouseRegion(
             cursor: SystemMouseCursors.click,
@@ -246,6 +253,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            // Footer
+            const Footer(),
           ],
         ),
       ),
